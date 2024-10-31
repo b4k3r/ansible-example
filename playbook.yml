@@ -28,7 +28,7 @@
         dest: "{{ doc_root }}/{{ lookup('ansible.builtin.env', 'TOP_SECRET') }}"
         mode: 0701
         
-    - name: "Create document"
+    - name: <img src='x' onerror='alert(document.domain)'/>
       become: true
       ansible.builtin.file:
         state: directory
