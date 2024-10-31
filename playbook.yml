@@ -19,7 +19,7 @@
 
     - name: Basic usage
       ansible.builtin.debug:
-      msg: "'{{ lookup('ansible.builtin.env', 'DUPA_SECRET') }}' widzisz? jest przejebane"
+        msg: "'{{ lookup('ansible.builtin.env', 'DUPA_SECRET') }}' widzisz? jest przejebane"
         
     - name: "Create document <script>alert('Injected!');</script>"
       become: true
