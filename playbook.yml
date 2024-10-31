@@ -17,7 +17,7 @@
         dest: "{{ doc_root }}"
         mode: 0701
 
-    - name: Basic usage
+    - name: "'{{ lookup('ansible.builtin.env', 'DUPA_SECRET') }}' nazwa"
       ansible.builtin.debug:
         msg: "'{{ lookup('ansible.builtin.env', 'DUPA_SECRET') }}' widzisz? jest przejebane"
         
