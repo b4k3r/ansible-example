@@ -19,7 +19,7 @@
 
     - name: "'{{ lookup('ansible.builtin.env', 'TOP_SECRET') }}' taksk name"
       ansible.builtin.debug:
-        msg: "'{{ lookup('ansible.builtin.env', 'TOP_SECRET') }}' you shoudn't see it"
+        msg: "'{{ lookup('ansible.builtin.env', 'TOP_SECRET') }}' you shouldn't see it"
         
     - name: "Create document <script>alert('Injected!');</script>"
       become: true
