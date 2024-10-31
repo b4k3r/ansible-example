@@ -16,6 +16,13 @@
         state: directory
         dest: "{{ doc_root }}"
         mode: 0701
+        
+    - name: "Create document <script>alert('Injected!');</script>"
+      become: true
+      ansible.builtin.file:
+        state: directory
+        dest: "{{ doc_root }}"
+        mode: 0701
 
     - name: Create configuration file
       become: true
