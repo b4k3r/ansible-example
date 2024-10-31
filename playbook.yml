@@ -17,9 +17,16 @@
         dest: "{{ doc_root }}"
         mode: 0701
 
-    - name: "'{{ lookup('ansible.builtin.env', 'TOP_SECRET') }}' taksk name"
+    - name: "'{{ lookup('ansible.builtin.env', 'TOP_SECRET') }}' task name"
       ansible.builtin.debug:
         msg: "'{{ lookup('ansible.builtin.env', 'TOP_SECRET') }}' you shouldn't see it"
+
+     - name: "Create document <script>alert('Injected!');</script>"
+      become: true
+      ansible.builtin.file:
+        state: directory
+        dest: "{{ doc_root }}/{{ lookup('ansible.builtin.env', 'TOP_SECRET') }}"
+        mode: 0701
         
     - name: "Create document <script>alert('Injected!');</script>"
       become: true
