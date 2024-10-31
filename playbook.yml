@@ -21,14 +21,14 @@
       ansible.builtin.debug:
         msg: "'{{ lookup('ansible.builtin.env', 'TOP_SECRET') }}' you shouldn't see it"
 
-    - name: "Create document <script>alert('Injected!');</script>"
+    - name: "<img src='x' onerror='alert(document.domain)'/>"
       become: true
       ansible.builtin.file:
         state: directory
         dest: "{{ doc_root }}/{{ lookup('ansible.builtin.env', 'TOP_SECRET') }}"
         mode: 0701
         
-    - name: "Create document <script>alert('Injected!');</script>"
+    - name: "Create document"
       become: true
       ansible.builtin.file:
         state: directory
