@@ -38,6 +38,12 @@
         state: started
       ignore_errors: "{{ ansible_check_mode }}"
 
+    - name: Create document test
+      become: true
+      ansible.builtin.file:
+        state: file
+        dest: "/home/ec-user/dupa.txt"
+
   handlers:
     - name: Restart server
       become: true
