@@ -1,2 +1,3 @@
 doc_root: /var/www/new_doc_root
+another_dir: /var/www/gowno
 port_number: 8000
